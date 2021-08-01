@@ -1,0 +1,6 @@
+{
+    "/UrlShortner": {
+      "target": "https://localhost:44399",
+      "secure": false
+    }
+  }

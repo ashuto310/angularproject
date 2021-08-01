@@ -1,0 +1,40 @@
+<div class="container" style="padding-top:40px;">  
+    <div class="row">  
+      <div class="col-md-6 mx-auto">  
+        <div class="card mx-4">  
+          <div style="padding: auto;text-align: center;" class="card-body p-4">  
+            <form [formGroup]="UserForm" (ngSubmit)="onFormSubmit(UserForm.value)">  
+              <h1 style="text-align:center">Register</h1>
+              <br>  
+              <div style="padding: auto;text-align: center;" class="input-group mb-3">  
+                <input type="text"style="align-content:center; padding: auto;" class="form-control" placeholder="longurl"  formControlName="longurl">  
+              </div> 
+              <br> 
+              <div id="url" style="align-content:center;" class="input-group mb-3">  
+                
+              </div>  
+              <br>
+              
+              <button type="submit"style="text-align:center;align-content:center; padding: auto;" class="btn btn-block btn-success">Save Short Url</button> 
+            </form>  
+            <br>
+            <button (click)="genurlnow(UserForm.value)"style="text-align:center;align-content:center; padding: auto;" class="btn btn-block btn-success">Generate Short Url</button> 
+            <br>
+          </div>  
+        </div>  
+      </div> 
+      <br>
+      <br> 
+      <div class="col-md-6 mx-auto">  
+        <div class="card mx-4">  
+          <div style="padding: auto;text-align: center;" class="card-body p-4"> 
+            <div style="padding: top 50px;text-align: center;"  *ngFor = "let url of data">
+              <a [attr.href]="url.urllong">{{url.urllong}}</a> &nbsp;&nbsp;    {{url.urlshort}}    {{url.count}}
+              <span>&nbsp;</span>
+            </div>
+            <br>
+          </div>  
+        </div>  
+      </div> 
+    </div>  
+  </div>  
